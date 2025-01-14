@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иса & Анка | Үйлену тойы</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@event-calendar/build/event-calendar.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay">
+        <div class="ornament-top"></div>
+        <div class="ornament-bottom"></div>
+    </div>
+    
+    <main class="container">
+        <div class="header fade-in">
+            <h1>Иса & Анка</h1>
+            <p class="subtitle">Үйлену тойына шақырамыз!</p>
+        </div>
+
+        <div class="date-venue slide-up">
+            <h2>Той күні</h2>
+            <p class="date">16 Шілде, 2024</p>
+            <p class="time">17:00</p>
+            <p class="venue">Дайын той сарайы</p>
+        </div>
+
+        <div class="countdown-container fade-in">
+            <h3>Тойға дейінгі уақыт</h3>
+            <div id="countdown">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <span class="label">Күн</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <span class="label">Сағат</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <span class="label">Минут</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <span class="label">Секунд</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="calendar-section slide-up">
+            <button class="calendar-btn" onclick="addToCalendar()">
+                <span class="calendar-icon">📅</span>
+                Күнтізбеге қосу
+            </button>
+        </div>
+
+        <div class="location-section slide-up">
+            <h3>Мекен-жайымыз</h3>
+            <p class="address">Дайын той сарайы, Алматы қаласы, Достық даңғылы, 12</p>
+            <div id="map" class="map-container"></div>
+            <a href="https://goo.gl/maps/YOUR_LOCATION" class="directions-btn" target="_blank">
+                Бағыт алу 🚗
+            </a>
+        </div>
+
+        <div class="gallery slide-up">
+            <img src="./images/background.jpg" alt="Той фото 1" class="couple-photo" loading="lazy">
+            <img src="./images/background.jpg" alt="Той фото 2" class="couple-photo" loading="lazy">
+            <img src="./images/background.jpg" alt="Той фото 3" class="couple-photo" loading="lazy">
+        </div>
+
+        <div class="comments-section slide-up">
+            <h3>Тілектер</h3>
+            <div class="comments-container">
+                <form id="commentForm" class="comment-form">
+                    <input type="text" id="name" placeholder="Сіздің атыңыз" required>
+                    <textarea id="message" placeholder="Тілегіңізді жазыңыз..." required></textarea>
+                    <button type="submit">Жіберу ✨</button>
+                </form>
+                <div id="comments-list" class="comments-list">
+                    <!-- Comments will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="music-control">
+            <button id="toggleMusic">
+                <span class="music-icon">🎵</span>
+            </button>
+        </div>
+    </main>
+
+    <audio id="bgMusic" loop>
+        <source src="./images/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/@event-calendar/build/event-calendar.min.js"></script>
+    <script src="app.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap">
+    </script>
+</body>
+</html> 

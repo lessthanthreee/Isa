@@ -1,0 +1,429 @@
+:root {
+    --primary-color: #c79546;
+    --secondary-color: #2d5ca6;
+    --accent-color: #8b0000;
+    --text-color: #2c3e50;
+    --light-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #1a365d, #8b6b2f);
+    color: var(--text-color);
+    min-height: 100vh;
+    position: relative;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/pattern.png') repeat center;
+    background-size: 300px;
+    opacity: 0.08;
+    backdrop-filter: blur(5px);
+    z-index: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5rem;
+    color: var(--light-color);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+.date-venue {
+    text-align: center;
+    margin-bottom: 4rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.date, .time, .venue {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+}
+
+.countdown-container {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    margin: 3rem 0;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.countdown-item {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    min-width: 100px;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-item span {
+    display: block;
+}
+
+.countdown-item span:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.countdown-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/pattern.png') no-repeat;
+    background-size: 150px;
+    background-position: center;
+    opacity: 0.1;
+    mix-blend-mode: overlay;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.couple-photo {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.couple-photo:hover {
+    transform: scale(1.05);
+}
+
+.music-control {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    animation: float 3s ease-out infinite;
+}
+
+#toggleMusic {
+    background: var(--glass-bg);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+    color: var(--light-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#toggleMusic:hover {
+    transform: scale(1.1);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.slide-up {
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .date, .time, .venue {
+        font-size: 1.4rem;
+    }
+
+    #countdown {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .countdown-item {
+        min-width: 80px;
+        padding: 1rem;
+    }
+} 
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+} 
+
+/* New Location Section Styles */
+.location-section {
+    text-align: center;
+    margin: 4rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    border: 2px solid var(--primary-color);
+    position: relative;
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    margin: 3rem 0;
+}
+
+.map-container {
+    height: 400px;
+    margin: 2rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.directions-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--secondary-color);
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+}
+
+.directions-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Calendar Button Styles */
+.calendar-btn {
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.calendar-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Comments Section Styles */
+.comments-section {
+    margin: 4rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.comments-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: url('../images/pattern.png') repeat-x;
+    background-size: 120px;
+    background-position: center -60px;
+    opacity: 0.2;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.comment-form input,
+.comment-form textarea {
+    padding: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.comment-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.comment-form button {
+    padding: 1rem;
+    background: var(--secondary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.comments-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.comment {
+    background: var(--glass-bg);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+    color: var(--light-color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-author {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Add decorative ornaments */
+.ornament-top,
+.ornament-bottom {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: url('../images/pattern.png') repeat-x;
+    background-size: 240px;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.ornament-top {
+    top: 0;
+    background-position: center 0;
+}
+
+.ornament-bottom {
+    bottom: 0;
+    background-position: center -180px;
+    transform: rotate(180deg);
+} 
+
+/* Common container styles */
+.countdown-container,
+.location-section,
+.comments-section {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 3rem 0;
+    color: var(--light-color);
+}
+
+/* Fix map container */
+.map-container {
+    height: 400px;
+    margin: 2rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+}
+
+/* Fix form inputs */
+.comment-form input,
+.comment-form textarea {
+    background: var(--glass-bg);
+    backdrop-filter: blur(5px);
+    color: var(--light-color);
+    border: 1px solid var(--glass-border);
+    width: 100%;
+}
+
+.comment-form input::placeholder,
+.comment-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+} 
