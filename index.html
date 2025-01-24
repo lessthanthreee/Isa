@@ -1,105 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Иса & Анка | Үйлену тойы</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@event-calendar/build/event-calendar.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jape AI Token</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #6e8efb, #4a6cf7);
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      padding: 50px 20px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .features, .about, .cta {
+      margin: 40px 0;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .features h2, .about h2, .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .cta button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background: #ff6f61;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cta button:hover {
+      background: #ff4a3d;
+    }
+
+    footer {
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <div class="background-overlay">
-        <div class="ornament-top"></div>
-        <div class="ornament-bottom"></div>
-    </div>
-    
-    <main class="container">
-        <div class="header fade-in">
-            <h1>Иса & Анка</h1>
-            <p class="subtitle">Үйлену тойына шақырамыз!</p>
-        </div>
+  <header>
+    <h1>Jape AI Token</h1>
+    <p>Revolutionizing the Future with AI and Blockchain</p>
+  </header>
 
-        <div class="date-venue slide-up">
-            <h2>Той күні</h2>
-            <p class="date">16 Шілде, 2024</p>
-            <p class="time">17:00</p>
-            <p class="venue">Дайын той сарайы</p>
-        </div>
+  <div class="container">
+    <section class="features">
+      <h2>Why Jape AI Token?</h2>
+      <ul>
+        <li>🚀 Powered by Advanced AI Technology</li>
+        <li>🔒 Secure and Decentralized Blockchain</li>
+        <li>💡 Smart Contracts for Seamless Transactions</li>
+        <li>🌍 Global Community-Driven Ecosystem</li>
+      </ul>
+    </section>
 
-        <div class="countdown-container fade-in">
-            <h3>Тойға дейінгі уақыт</h3>
-            <div id="countdown">
-                <div class="countdown-item">
-                    <span id="days">00</span>
-                    <span class="label">Күн</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="hours">00</span>
-                    <span class="label">Сағат</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="minutes">00</span>
-                    <span class="label">Минут</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="seconds">00</span>
-                    <span class="label">Секунд</span>
-                </div>
-            </div>
-        </div>
+    <section class="about">
+      <h2>About Jape AI Token</h2>
+      <p>
+        Jape AI Token is a cutting-edge cryptocurrency that combines artificial intelligence and blockchain technology to create a decentralized, efficient, and secure financial ecosystem. Join us in shaping the future of finance!
+      </p>
+    </section>
 
-        <div class="calendar-section slide-up">
-            <button class="calendar-btn" onclick="addToCalendar()">
-                <span class="calendar-icon">📅</span>
-                Күнтізбеге қосу
-            </button>
-        </div>
+    <section class="cta">
+      <h2>Join the Revolution</h2>
+      <button onclick="alert('Coming Soon!')">Get Started</button>
+    </section>
+  </div>
 
-        <div class="location-section slide-up">
-            <h3>Мекен-жайымыз</h3>
-            <p class="address">Дайын той сарайы, Алматы қаласы, Достық даңғылы, 12</p>
-            <div id="map" class="map-container"></div>
-            <a href="https://goo.gl/maps/YOUR_LOCATION" class="directions-btn" target="_blank">
-                Бағыт алу 🚗
-            </a>
-        </div>
-
-        <div class="gallery slide-up">
-            <img src="./images/background.jpg" alt="Той фото 1" class="couple-photo" loading="lazy">
-            <img src="./images/background.jpg" alt="Той фото 2" class="couple-photo" loading="lazy">
-            <img src="./images/background.jpg" alt="Той фото 3" class="couple-photo" loading="lazy">
-        </div>
-
-        <div class="comments-section slide-up">
-            <h3>Тілектер</h3>
-            <div class="comments-container">
-                <form id="commentForm" class="comment-form">
-                    <input type="text" id="name" placeholder="Сіздің атыңыз" required>
-                    <textarea id="message" placeholder="Тілегіңізді жазыңыз..." required></textarea>
-                    <button type="submit">Жіберу ✨</button>
-                </form>
-                <div id="comments-list" class="comments-list">
-                    <!-- Comments will be dynamically added here -->
-                </div>
-            </div>
-        </div>
-
-        <div class="music-control">
-            <button id="toggleMusic">
-                <span class="music-icon">🎵</span>
-            </button>
-        </div>
-    </main>
-
-    <audio id="bgMusic" loop>
-        <source src="./images/music.mp3" type="audio/mpeg">
-    </audio>
-
-    <script src="https://cdn.jsdelivr.net/npm/@event-calendar/build/event-calendar.min.js"></script>
-    <script src="app.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap">
-    </script>
+  <footer>
+    <p>&copy; 2025 Jape AI Token. All rights reserved.</p>
+  </footer>
 </body>
-</html> 
+</html>
